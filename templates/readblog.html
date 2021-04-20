@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for blog in blog_body %}
+<a href="{{url_for('good_new', data=blog[3])}}"> Blog title is : <b>{{blog[3]}}</b> Written by:<b>{{blog[2]}}</b></a>
+<br>
+{% endfor %}
+</body>
+</html>

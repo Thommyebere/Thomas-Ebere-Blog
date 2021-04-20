@@ -1,0 +1,43 @@
+<!doctype html>
+<form>
+    <select id="county">
+        <option></option>
+    </select>
+    <select id="capitaly"></select>
+    <!--    <button type="submit">Play</button>-->
+</form>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+    "use strict";
+
+    var countt = {{ countt|tojson }};
+
+    var form=  $('form');
+    var county = $('select#county');
+    var capitaly = $('select#capitaly');
+
+    for (var key in countt) {
+        county.append($('<option/>', {'value': key, 'text': key}));
+    }
+
+    county.change(function(ev) {
+        capitaly.empty();
+        capitaly.append($('<option/>'));
+
+        var capital = countt[county.val()];
+
+        for (var i in capital) {
+            capitaly.append($('<option/>', {'value': capital[i], 'text': capital[i]}));
+        }
+    });
+
+<!--    form.submit(function(ev) {-->
+<!--        ev.preventDefault();-->
+<!--        alert("playing " + capitaly.val() + " on " + county.val());-->
+<!--    });-->
+</script>
+
+<!--{% for i in countt %}-->
+<!--{{i}} <br>-->
+<!--{% endfor %}-->
+

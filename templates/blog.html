@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create blog</title>
+</head>
+<body>
+
+<form action="/createblog" method="post" enctype="multipart/form-data">
+    <label for="title">Enter post name:</label><br>
+    <input type="text" id="blogtitle" name="blogtitle"><br>
+    <br>
+    <input type="file" name="file"/>
+    <br>
+    <br>
+    <label for="title">Post Body</label><br>
+    <textarea rows="9" cols="70" name="content"></textarea>
+
+    <input type="submit" value="publish"/>
+
+</form>
+</body>
+</html>
